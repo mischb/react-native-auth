@@ -63,9 +63,7 @@ export default class LoginForm extends Component {
           {this.state.loading ? (
             <Spinner size={'small'} />
           ) : (
-            <Button onPress={this.onButtonPress.bind(this)} btnText={'sign in'}>
-              Log In
-            </Button>
+            <Button onPress={this.onButtonPress.bind(this)}>Log In</Button>
           )}
         </CardSection>
       </Card>

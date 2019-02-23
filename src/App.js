@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Header, Button, Spinner } from './components/common';
+import { Header, Button, Spinner, CardSection } from './components/common';
 import LoginForm from './components/LoginForm';
 import firebase from 'firebase';
 
@@ -25,17 +25,17 @@ class App extends Component {
     switch (this.state.loggedIn) {
       case true:
         return (
-          <Button onPress={() => firebase.auth().signOut()} btnText={'Log Out'}>
-            Log Out
-          </Button>
+          <CardSection>
+            <Button onPress={() => firebase.auth().signOut()}>Log Out</Button>
+          </CardSection>
         );
       case false:
         return <LoginForm />;
       default:
         return (
-          <View style={styles.spinnerStyle}>
+          <CardSection style={styles.spinnerStyle}>
             <Spinner />
-          </View>
+          </CardSection>
         );
     }
   }
